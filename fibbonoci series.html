@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Series</title>
+</head>
+<body>
+    <label for="limit">Enter the limit for Fibonacci Series:</label>
+    <input type="number" id="limit">
+    <button onclick="generateFibonacci();">Generate Fibonacci Series</button>
+    <p id="fibonacci"></p>
+
+    <script>
+        function generateFibonacci() {
+            var n1 = 0, n2 = 1, next_num, i;
+            var limit = parseInt(document.getElementById("limit").value);
+            var fibonacciSeries = "Fibonacci Series: ";
+
+            for (i = 1; i <= limit; i++) {
+                fibonacciSeries += "<br>" + n1;
+                next_num = n1 + n2;
+                n1 = n2;
+                n2 = next_num;
+            }
+
+            document.getElementById("fibonacci").innerHTML = fibonacciSeries;
+        }
+    </script>
+</body>
+</html>

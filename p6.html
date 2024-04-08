@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script>
+        let x = prompt("Enter the number:");
+
+        var a = Number(x);
+        let temp = 0;
+        let original = a;
+
+        while (a > 0) {
+            let rem = a % 10;
+            temp = temp * 10 + rem;
+            a = (a / 10); 
+        }
+
+        if (temp == original) {
+            document.write("Palindrome");
+        } else {
+            document.write("Not Palindrome");
+        }
+    </script>
+</body>
+</html>

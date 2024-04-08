@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        center {
+            padding: 10px;
+            background-color: aqua;
+            color: blue;
+        }
+        .parent {
+            padding: 50px;
+            background-color: aquamarine;
+            margin: 50px auto;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Check input Character is alphabet or digit or special Character</h1>
+    </center>
+    <hr>
+    <div class="parent">
+        <input type="text" id="inputField" >
+        <button type="submit" onclick="charCheck()" id="name">Submit</button> 
+        <p id="validationMessage"></p>
+        <h1 id="result"></h1>
+    </div>
+
+    <script>
+        function charCheck() {
+            var inputField = document.getElementById("inputField");
+            var inputValue = inputField.value;
+
+            if(inputValue.length==""){
+                document.getElementById("validationMessage").textContent = "Enter ";
+            }
+            if (inputValue.length > 10) {
+                document.getElementById("validationMessage").textContent = "Input should be a maximum of 10 characters.";
+                document.getElementById("result").textContent = "";
+            } else {
+                document.getElementById("validationMessage").textContent = "";
+
+                var input_char = inputValue.charCodeAt(0);
+
+                if ((input_char >= 65 && input_char <= 90) || (input_char >= 97 && input_char <= 122)) {
+                    document.getElementById("result").textContent = "Alphabet";
+                } else if (input_char >= 48 && input_char <= 57) {
+                    document.getElementById("result").textContent = "Digit";
+                    // document.getElementById("result").style.color = "red";
+                } else {
+                    document.getElementById("result").textContent = "Special Character";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
